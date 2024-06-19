@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap");
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        line-height: 1.2;
+        /* border: 2px solid black; */
+      }
+      .cover {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+      }
+      .cover_page {
+        background: url('https://images.unsplash.com/photo-1544716278-e513176f20b5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEwfHxib29rc3xlbnwwfHwwfHx8MA%3D%3D');
+        width: 50vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* border: 2px solid yellow; */
+      }
+      .form{
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+      }
+      .container {
+        width: 394px;
+        box-sizing: border-box;
+        backface-visibility: hidden;
+        box-shadow: rgba(34, 34, 34, 0.24) 0px 0px 16px 0px;
+        background-color: rgb(245, 245, 245);
+        padding: 3rem 2rem;
+        font-family: "Poppins", sans-serif;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      header h2 {
+        text-align: center;
+        color: black;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      header h3 {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 0.97rem;
+      }
+      .input_heading {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: bold;
+        padding: 0 0 0.44rem;
+        line-height: initial;
+      }
+      input {
+        border: 2px solid rgb(231, 231, 231);
+        width: 100%;
+        color: rgb(118, 118, 118);
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        height: 2.5rem;
+        background: #fff;
+        align-items: center;
+        padding: calc(-2px + 0.5rem) calc(-2px + 1rem);
+        font-size: 1rem;
+        outline: none;
+      }
+      input:focus {
+        border: 2px solid #555;
+      }
+      input:hover {
+        border-color: rgb(153, 153, 153);
+      }
+      .hori {
+        font-size: 1.125rem;
+        color: black;
+        line-height: 1.5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+      }
+      .hori::before,
+      .hori::after {
+        content: "";
+        width: 130px;
+        border-block-start: 2px solid rgb(231, 231, 231);
+        display: block;
+      }
+      .links {
+        -moz-box-align: center;
+        align-items: center;
+        display: inline-flex;
+        font-size: inherit;
+        -moz-box-pack: center;
+        justify-content: center;
+        white-space: nowrap;
+        visibility: visible;
+        height: 1.25rem;
+        overflow: visible;
+        color: rgb(0, 121, 158);
+        border: none;
+        background: none;
+        text-transform: none;
+      }
+      .login_with {
+        display: flex;
+        /* flex-basis: 33%; */
+      }
+      .log_into {
+        margin: 0;
+        padding: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        flex-grow: 1;
+        display: flex;
+        border-radius: 0px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        border: 2px solid rgb(231, 231, 231);
+        background: #fff;
+      }
+      .submit {
+        display: flex;
+        justify-content: center;
+        margin-block-start: 1.5rem;
+      }
+      .submit button {
+        /* padding: calc(-2px + 0.6rem) calc(-2px + 1.2rem); */
+        padding: 0.6rem 1.2rem;
+        border: 2px solid rgb(231, 231, 231);
+        border-radius: 1.5rem;
+        background: #fff;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #4e4e4e;
+      }
+      .idk {
+        text-align: center;
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+      }
+      .idk button {
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .idk button:hover {
+        text-decoration: underline;
+      }
+
+      @media only screen and (max-width: 598px) {
+        /* .cover {
+          display: block;
+        } */
+        .cover_page {
+          width: 0;
+          /* display: flex; */
+          /* justify-content: center;
+          align-items: center; */
+        }
+        .form {
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          background-color: rgb(245, 245, 245);
+        }
+        .container {
+          /* background: transparent; */
+
+          box-shadow: none;
+          width: 100vw;
+
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover">
+      <div class="cover_page"></div>
+      <div class="form">
+        <div class="container">
+          <header>
+            <h2>Sign in</h2>
+            <h3>to your LearningLoom account</h3>
+          </header>
+          <form>
+            <div class="login_email_input_group">
+              <label for="login_email_input" class="input_heading">Email</label>
+              <div style="position: relative">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+                <br />
+              </div>
+            </div>
+            <div class="login_password_input_group">
+              <label for="login_password_input" class="input_heading"
+                >Password</label
+              >
+              <div style="position: relative">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Enter your password"
+                />
+              </div>
+            </div>
+            <span class="hori"> OR </span>
+            <div class="login_with">
+              <button class="log_into">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"
+                  ></path>
+                </svg>
+                <div class="icon">Apple</div>
+              </button>
+              <button class="log_into">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 48 48"
+                >
+                  <linearGradient
+                    id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1"
+                    x1="9.993"
+                    x2="40.615"
+                    y1="9.993"
+                    y2="40.615"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0" stop-color="#2aa4f4"></stop>
+                    <stop offset="1" stop-color="#007ad9"></stop>
+                  </linearGradient>
+                  <path
+                    fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)"
+                    d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"
+                  ></path>
+                </svg>
+                <div class="icon">Facebook</div>
+              </button>
+              <button class="log_into">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#FFC107"
+                    d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                  <path
+                    fill="#FF3D00"
+                    d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+                  ></path>
+                  <path
+                    fill="#4CAF50"
+                    d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+                  ></path>
+                  <path
+                    fill="#1976D2"
+                    d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                </svg>
+                <div class="icon">Google</div>
+              </button>
+            </div>
+            <div class="submit">
+              <button type="submit">
+                <span>Sign in</span>
+              </button>
+            </div>
+          </form>
+          <footer class="idk">
+            <p>
+              Don't have an account?
+              <button type="button" class="links">
+                <span class="links">Sign up</span>
+              </button>
+            </p>
+            <button type="button" class="links">
+              <span class="links">Forgot Password?</span>
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

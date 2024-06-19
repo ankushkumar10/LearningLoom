@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="learningloom.css" />
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ===== FONT AWESOME CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav>
+      <div class="nav-bar">
+        <i class="bx bx-menu sidebarOpen"></i>
+        <span class="logo navLogo dark" id="mind"
+          ><a href="#"><img src="/images/loomlogo.png" alt="navlogo" /></a
+        ></span>
+
+        <div class="menu">
+          <div class="logo-toggle modeToggle">
+            <span class="logo"
+              ><a href="#"><img src="/images/loomlogo.png" alt="" /></a
+            ></span>
+            <i class="bx bx-x siderbarClose"></i>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li>
+              <div class="dropdown" onclick="toggleDropdown()">
+                <button class="dropbtn">Engineering</button>
+                <div class="dropdown-content">
+                  <a href="#">Syllabus</a>
+                  <a href="#">Theories</a>
+                  <a href="#">eBooks</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">ExamPrep</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="darkLight-searchBox">
+          <div class="dark-light">
+            <i class="bx bx-moon moon"></i>
+            <i class="bx bx-sun sun"></i>
+          </div>
+
+          <div class="searchBox">
+            <div class="searchToggle">
+              <i class="bx bx-x cancel"></i>
+              <i class="bx bx-search search"></i>
+            </div>
+
+            <div class="search-field">
+              <input type="text" placeholder="Search..." />
+              <i class="bx bx-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <script src="/js/main.js"></script>
+    <script src="/js/nav.js"></script>
+  </body>
+  </html>
+  
